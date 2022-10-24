@@ -17,14 +17,14 @@ provider "random" {
 module "my_vpc" {
   source = "./modules/network"
   vpc_cidr = "192.168.0.0/16"
-  #vpc_id = "${module.my_vpc.vpc_id}"
-  #private_subnet_cidr="${module.my_vpc.private_subnet_cidr[0]}"
+  vpc_id = "${module.my_vpc.vpc_id}"
+  private_subnet_cidr="${module.my_vpc.private_subnet_cidr[0]}"
   
 }
 
 module "ec2"{  
    source= "./modules/ec2" 
-   #subnet_id = "${module.my_vpc.private_subnet_cidr}"
+   subnet_id = "${module.my_vpc.private_subnet_cidr}"
 
    }
 
@@ -34,7 +34,7 @@ module "ec2"{
 
   module "route53" {
    source = "./modules/Route53"
-   #vpc_id = "{module.myvpc.vpc_id}"
+   vpc_id = "{module.my_vpc.vpc_id}"
    }
 
 
