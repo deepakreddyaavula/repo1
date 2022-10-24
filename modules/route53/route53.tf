@@ -3,7 +3,7 @@ resource "aws_route53_zone" "private" {
   name = var.domain_name
 
 vpc { 
-  vpc_id = "192.168.3.0/24"
+  vpc_id = "aws_vpc.geo_vpc.id"
   }
  
 
@@ -18,7 +18,6 @@ resource "aws_route53_record" "private_record" {
   name    = var.record_name
   type    = "A"
   ttl     = 300
-  #records = [aws_instance.server1.private_ip]
-  records = ["instance-test.geo-terraform-test.com"]
+  records = [aws_instance.server1.private_ip]
 }
 
