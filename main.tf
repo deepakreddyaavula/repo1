@@ -3,8 +3,6 @@
 # Configure the AWS Provider
 provider "aws" {
   region = "ap-southeast-1"
-  access_key = "AKIAXBJJ77ZG2F7UWWHE"
-  secret_key = "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"
   #i  configured my  aws credentials using aws configure command in my OS terminal then i  passed my profile name 
   #profile = "myprofilename"
 }
