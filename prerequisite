@@ -1,4 +1,4 @@
-Used VS code as code editor  to write code 
+Used Visual Studio code as code editor to write code. 
  Terraform version is 
 macbook@MacbooksMacBook github-final % terraform --version
 Terraform v0.15.0
