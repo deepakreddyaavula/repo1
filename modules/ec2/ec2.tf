@@ -1,12 +1,12 @@
 resource "aws_instance" "server1" {
   ami =  "${var.ami_id}"
   instance_type = "${var.instance_type}"
-  subnet_id     = "192.168.3.0/24"
+  subnet_id     = "aws_subnet.private_subnet[0].id"
   
 
  
   
     tags = {
-    Name = "dev_server"
+    Name = "test_server"
   }
 }
